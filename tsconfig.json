@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "lib": ["ES2021"],
-    "rootDir": "lib",
+    "rootDir": ".",
     "outDir": "dist",
     "module": "ES2022",
     "moduleResolution": "node",
@@ -11,5 +11,5 @@
   "ts-node": {
     "esm": true
   },
-  "include": ["/**/*.ts"]
+  "include": ["lib/**/*.ts", "test/**/*.ts"]
 }
