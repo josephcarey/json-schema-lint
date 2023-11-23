@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "lib": ["ES2021"],
+    "rootDir": "lib",
+    "outDir": "dist",
+    "module": "ES2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true
+  },
+  "ts-node": {
+    "esm": true
+  },
+  "include": ["/**/*.ts"]
+}

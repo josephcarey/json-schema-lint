@@ -1,0 +1,70 @@
+{
+  "name": "json-schema-lint",
+  "author": "Joseph Carey",
+  "version": "0.0.1",
+  "description": "A simple tool for linting json schemas according to a set of rules.",
+  "type": "module",
+  "engines": {
+    "node": ">= 18.12"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josephcarey/json-schema-lint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josephcarey/json-schema-lint/issues"
+  },
+  "homepage": "https://github.com/josephcarey/json-schema-lint#readme",
+  "main": "src/main.ts",
+  "files": [
+    "dist",
+    "src",
+    "build"
+  ],
+  "bin": {
+    "test-test": "./bin/lint-json-schema.js"
+  },
+  "scripts": {
+    "lint": "eslint \"./**/*.ts\"",
+    "prettier": "prettier --write .",
+    "clean": "npm run lint && npm run prettier",
+    "prebuild": "npm run clean",
+    "build": "rimraf './build' && tsc",
+    "pretest": "npm run build",
+    "test": "c8 ava",
+    "dev": "npx tsx examples/example.js"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "rc": "^1.2.8"
+  },
+  "devDependencies": {
+    "@ava/typescript": "^4.1.0",
+    "@types/node": "^20.9.4",
+    "@typescript-eslint/eslint-plugin": "^6.12.0",
+    "@typescript-eslint/parser": "^6.12.0",
+    "ava": "^5.3.1",
+    "c8": "^8.0.1",
+    "eslint": "^8.54.0",
+    "eslint-plugin-unicorn": "^49.0.0",
+    "prettier": "3.1.0",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.4.0",
+    "typescript": "5.3.2"
+  },
+  "ava": {
+    "files": [
+      "lib/**/*.test.ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "typescript": {
+      "rewritePaths": {
+        "./": "build/"
+      },
+      "compile": false
+    }
+  },
+  "license": "GPL-3.0-or-later"
+}
