@@ -56,9 +56,6 @@
     "files": [
       "lib/**/*.test.ts"
     ],
-    "require": [
-      "ts-node/register"
-    ],
     "typescript": {
       "rewritePaths": {
         "./": "build/"
